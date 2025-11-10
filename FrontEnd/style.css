@@ -1,0 +1,310 @@
+/* style.css */
+
+/* ========== Global Variables ========== */
+:root {
+    /* Colors */
+    --color-bg: #f4f6f8;
+    --color-text: #222;
+    --color-primary: #007BFF;
+    --color-primary-dark: #0056b3;
+    --color-correct-bg: #d9f9e3;
+    --color-correct-text: #2e7d32;
+    --color-correct-border: #43a047;
+    --color-input-border: #bbb;
+    --color-input-hover-bg: #f8fff9;
+    --color-input-hover-border: #66bb6a;
+    --color-badge-bg: #007BFF;
+    --color-badge-text: #fff;
+    --color-badge-secondary: #6c757d;
+
+    /* Fonts */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Sizes */
+    --font-size-large: 2rem;
+    --font-size-input: 1.3rem;
+    --input-size: 55px;
+    --border-radius: 8px;
+    --spacing: 20px;
+}
+
+/* ========== Reset ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ========== Header ========== */
+#welcome_Message {
+    font-size: var(--font-size-large);
+    font-weight: 600;
+    margin-bottom: var(--spacing);
+    text-align: center;
+}
+
+/* ========== Game Container ========== */
+#wordsContainer {
+    position: relative;
+    background: #fff;
+    border-radius: var(--border-radius);
+    border: 2px solid #ddd;
+    padding: 30px 20px 60px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing);
+}
+
+/* ========== Word to Guess ========== */
+#word_to_guess {
+    display: flex;
+    gap: 8px;
+    font-size: var(--font-size-input);
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* ========== Answers Layout ========== */
+#answers {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Each row (attempt) */
+.answer-attempt {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+/* Inputs (squares) */
+input {
+    width: var(--input-size);
+    height: var(--input-size);
+    font-size: var(--font-size-input);
+    text-align: center;
+    border: 2px solid var(--color-input-border);
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+
+input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 3px var(--color-primary);
+}
+
+/* Correct letters (disabled) */
+input:disabled {
+    background-color: var(--color-correct-bg);
+    color: var(--color-correct-text);
+    border: 2px solid var(--color-correct-border);
+    font-weight: bold;
+}
+
+/* Hover effect */
+input:not(:disabled):hover {
+    border-color: var(--color-input-hover-border);
+    background-color: var(--color-input-hover-bg);
+}
+
+/* ========== Attempts Badge ========== */
+.badge {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    background-color: var(--color-badge-bg);
+    color: var(--color-badge-text);
+    padding: 10px 14px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.badge p {
+    font-size: 0.9rem;
+    margin-right: 6px;
+}
+
+.text-bg-secondary {
+    background-color: var(--color-badge-secondary);
+    color: #fff;
+    padding: 3px 7px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* ========== Submit Button ========== */
+#submitAnswer {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--color-primary);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 25px;
+}
+
+#submitAnswer:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-1px);
+}
+
+
+/* Header Container */
+.header {
+    background-color: #2c3e50; /* dark blue-gray background */
+    color: #ecf0f1; /* light text */
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+/* Nav layout using flex */
+.header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.header nav > div:first-child a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+/* Navigation links */
+.header nav > div:nth-child(2) a {
+    margin: 0 10px;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header nav > div:nth-child(2) a:hover {
+    color: #3498db; /* highlight on hover */
+}
+
+/* Login / Logout section */
+.header nav > div:last-child a,
+.header nav > div:last-child button {
+    margin-left: 10px;
+    color: #ecf0f1;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s, background 0.3s;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.header nav > div:last-child a:hover,
+.header nav > div:last-child button:hover {
+    color: #fff;
+    background-color: #2980b9; /* blue hover background */
+}
+
+/* Logout button specific style */
+.header nav > div:last-child button#Logout {
+    background-color: #e74c3c; /* red button */
+    color: #fff;
+}
+
+.header nav > div:last-child button#Logout:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive: stack nav on smaller screens */
+@media (max-width: 600px) {
+    .header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header nav > div {
+        margin: 5px 0;
+    }
+
+    .header nav > div:nth-child(2) a {
+        margin: 0 5px 0 0;
+    }
+}
+
+
+/* Login Form */
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--color-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    font-family: var(--font-main);
+}
+
+#loginForm label {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--color-text);
+}
+
+#loginForm input {
+    padding: 10px 15px;
+    font-size: var(--font-size-input);
+    border: 2px solid var(--color-input-border);
+    border-radius: var(--border-radius);
+    transition: 0.3s;
+    width: 100%;
+}
+
+#loginForm input:focus {
+    border-color: var(--color-primary);
+    background-color: var(--color-input-hover-bg);
+    outline: none;
+}
+
+#loginForm button {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#loginForm button:hover {
+    background-color: var(--color-primary-dark);
+}

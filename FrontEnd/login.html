@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+    <header  class="header">
+        <nav>
+            <div>
+                <a href=#"" title="Logo">WordGame</a>
+            </div>
+            <div>
+                <a href="Home.html">Home</a>
+                <a href="Index.html">Play</a>
+            </div>
+            <div>
+                <a href="login.html">Login</a>
+                <button id="Logout">Logout</button>
+            </div>
+            
+        </nav>
+    </header>
+    <h2>Login Page</h2>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <button type="submit">Login</button>
+    </form>
+
+
+
+    <script>
+        const URL = 'http://localhost:82/Agile%20TP/Words%20Game/BackEnd/Index.php/api/';
+
+        document.getElementById('loginForm').addEventListener('submit', loginUser);
+
+        function FetchLoginUser(username, password) {
+            return fetch(URL + 'login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => response.json())
+            .then(data => data)
+        }
+
+        function loginUser(event) {
+            event.preventDefault(); 
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            FetchLoginUser(username, password)
+                .then(response => {
+                    if (response.status === 'success') {
+                        localStorage.setItem('sessionId', response.sessionId);
+                        // redirect
+                        window.location.href = 'Index.html';
+                    } else {
+                        alert('Login failed: ' + response.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during login:', error);
+                });
+        }
+    </script>
+
+</body>
+</html>

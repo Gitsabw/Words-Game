@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header  class="header">
+        <nav>
+            <div>
+                <a href=#"" title="Logo">WordGame</a>
+            </div>
+            <div>
+                <a href="Home.html">Home</a>
+                <a href="Index.html">Play</a>
+            </div>
+            <div>
+                <a href="login.html">Login</a>
+                <button id="Logout">Logout</button>
+            </div>
+            
+        </nav>
+    </header>
+    <h1 id="welcome_Message">
+
+    </h1>
+
+    <!-- Container of Inputs for the Word to Guess -->
+    <div id="wordsContainer">
+        <div id="word_to_guess">
+
+        </div>
+
+        <div id="answers">
+            <!--
+            loop to create multiple attempts (divs)
+            each attempt contains multiple inputs for each letter (1 input per letter)
+            <div class="answer-attempt">
+                <input type="text">
+                <input type="text" disabled>
+            </div> -->
+        </div>
+        
+    <span class="badge bg-primary">
+        <p>Attempts Left</p> <span class="text-bg-secondary" id="attemptsNumber"></span>
+    </span>
+    </div>
+    <button id="submitAnswer">Get Word</button>
+    
+
+    <script type="module" src="App.js"></script>
+</body>
+</html>
