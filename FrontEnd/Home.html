@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>WordGame Home</title>
+    <style>
+        /* Home page styles (header untouched) */
+.home-main {
+    font-family: 'Arial', sans-serif;
+    color: #2c3e50;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    color: #fff;
+    border-radius: 0 0 50% 50% / 0 0 10% 10%;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero .btn-play {
+    background-color: #e67e22;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background 0.3s;
+}
+
+.hero .btn-play:hover {
+    background-color: #d35400;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px 50px;
+}
+
+.feature-card {
+    background-color: #ecf0f1;
+    flex: 1 1 250px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.feature-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <div>
+                <a href=#"" title="Logo">WordGame</a>
+            </div>
+            <div>
+                <a href="Home.html">Home</a>
+                <a href="Index.html">Play</a>
+            </div>
+            <div>
+                <a href="login.html">Login</a>
+                <button id="Logout">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="home-main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Welcome to WordGame!</h1>
+            <p>Test your vocabulary, challenge your friends, and have fun guessing words!</p>
+            <a href="Index.html" class="btn-play">Start Playing</a>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature-card">
+                <h2>Challenge Yourself</h2>
+                <p>Improve your word skills and memory with exciting challenges.</p>
+            </div>
+            <div class="feature-card">
+                <h2>Multiplayer Mode</h2>
+                <p>Play with friends or random players online and see who wins!</p>
+            </div>
+            <div class="feature-card">
+                <h2>Track Progress</h2>
+                <p>See your stats, attempts, and high scores as you keep improving.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
