@@ -12,7 +12,7 @@ function LogoutUser(){
     return fetch(URL + 'logout')
     .then(response => response.json())
     .then(data => {
-        // console.log(data)
+        console.log(data)
         return data})
 }
 
@@ -20,7 +20,7 @@ function GetWord() {
     return fetch(URL + 'getword')
         .then(response => response.json())
         .then(data => { 
-            //console.log('fetched word:', data)
+            console.log('fetched word:', data)
             return data; 
         })
 }
@@ -39,7 +39,7 @@ function SubmitAnswer(userAnswer) {
     .then(response => response.json())
     .then(data => {
         // Handle the response data
-        console.log('Response from SubmitAnswer:', data);
+        // console.log('Response from SubmitAnswer:', data);
         return data;
     });
 }

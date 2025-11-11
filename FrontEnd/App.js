@@ -18,12 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleSubmit() {
         
-
         // Logic to handle the submission of the guessed word
         let inputs = document.querySelectorAll('#wordsContainer input');
 
-        let wordLength = WordToGuess.length; 
-        let lastInputs = Array.from(inputs).slice(-wordLength); // get the last N inputs
+        let lastInputs = Array.from(inputs).slice(-WordToGuess); // get the last N inputs
+        
+        let invalid = Array.from(lastInputs).filter(inp => inp.value === '' || !isNaN(inp.value));
+
+        if (invalid.length !== 0) {
+            alert('All inputs must be filled with letters!');
+            Array.from(invalid).map(inp => inp.value = '');
+            return;
+        }
+
         let userAnswer = lastInputs.map(input => input.value).join('');
         console.log('Last user attempt:', userAnswer);
             
