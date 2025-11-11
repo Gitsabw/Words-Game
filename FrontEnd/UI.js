@@ -10,10 +10,9 @@ function RedirectToPage(pageUrl) {
 function showWordToGuess(word) {
     // console.log('', word);
     
-    let wordLength = word.length;
     let div = document.getElementById('word_to_guess');
     
-    for (let i = 0; i < wordLength; i++) {
+    for (let i = 0; i < word; i++) {
         let inp = document.createElement('input');
         inp.type = 'text';
         inp.maxLength = 1;
@@ -46,7 +45,7 @@ function showAnswers(answerData) {
         return;
     }
 
-    answerData.correct.forEach((letter, index) => {
+    answerData.correct.forEach((letter) => {
     let input = document.createElement('input');
     input.value = letter;
     input.type = 'text';

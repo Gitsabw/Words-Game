@@ -41,7 +41,7 @@ class Controller {
         $_SESSION['CorrectWord'] = $WordToGuess;
         $_SESSION['NumberOfAttempts'] = 5;
 
-        echo json_encode(["word" => count($_SESSION['CorrectWord']), "attempts" => $_SESSION['NumberOfAttempts']]);
+        echo json_encode(["word" => strlen($_SESSION['CorrectWord']), "attempts" => $_SESSION['NumberOfAttempts']]);
     }
 
     public function SubmitAnswer() {
